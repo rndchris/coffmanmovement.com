@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Coffman | Portfolio</title>
+    <style>
+        /* Base layout with static background photo */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #f8f9fa;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            background: url('assets/images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Header styling */
+        .site-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+        }
+
+        .site-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin: 0;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        /* Reusable glass styling */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* Layout wrapper */
+        .app-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Navigation styling */
+        nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #f8f9fa;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0.6rem 1.2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        nav button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        nav button.active-tab {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Utility classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .section-panel {
+            padding: 2.5rem;
+        }
+
+        /* Typography */
+        h2 {
+            margin-top: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        strong {
+            color: #ffffff;
+        }
+
+        /* Project Cards */
+        .project {
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-3px);
+        }
+        
+        .project p {
+            margin: 0.4rem 0;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+        
+        .project .desc {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Video Embeds */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            background: #000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Images and Credits */
+        .content-image {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .photo-credit {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        #contact-footer {
+            margin-top: 3rem;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .site-header h1 {
+                font-size: 2.2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            nav button {
+                width: 100%;
+                padding: 0.75rem;
+            }
+
+            .section-panel, .project {
+                padding: 1.5rem;
+            }
+
+            #contact-footer {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header class="site-header">
+            <h1>Christopher Coffman</h1>
+        </header>
+
+        <nav class="glass-panel">
+            <button onclick="showSection('dance', this)" class="active-tab">Dance & Choreography</button>
+            <button onclick="showSection('strength', this)">Strength & Conditioning</button>
+            <button onclick="showSection('about', this)">About Me</button>
+        </nav>
+
+        <main>
+            <!-- DANCE & CHOREOGRAPHY SECTION -->
+            <section id="dance" class="content-section">
+                
+                <div class="glass-panel project">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/XnMYnREgmOw" title="Mother" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3>Mother</h3>
+                    <p><strong>Choreographer:</strong> Christopher Coffman</p>
+                    <p><strong>Dancers:</strong> Britney Hargis, Andrea Schwerbel, Haley Hamilton</p>
+                    <p><strong>Music:</strong> Femen – Crystal Castles, Mourning – Colin Stetson</p>
+                    <p><strong>Videographer:</strong> Yaron Kidron</p>
+                    <p><strong>Location/Performance:</strong> Madison Experimental Dance Incubator, Cycle 2. August 9th, 2026</p>
+                    <p><strong>Style:</strong> Contemporary</p>
+                    <p class="desc"><strong>Description:</strong> Mother is a horror-inspired contemporary trio. Two daughters resort to unusual methods to see their recently departed mother again.</p>
+                </div>
+
+                <div class="glass-panel project">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/cbdVQ_TIBf4" title="Ferdinand Finale" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3>Ferdinand Finale</h3>
+                    <p><strong>Choreographer(s):</strong> Christopher Coffman, Mike Tredupp</p>
+                    <p><strong>Dancer:</strong> Christopher Coffman</p>
+                    <p><strong>Music:</strong> I’ll Make a Man Out of You – Disney Peaceful Strings</p>
+                    <p><strong>Videographer:</strong> Jim Vaness</p>
+                    <p><strong>Location/Performance:</strong> Ferdinand by Beatrix Productions September 26, 2026</p>
+                    <p><strong>Style:</strong> Contemporary</p>
+                    <p class="desc"><strong>Description:</strong> Ferdinand the bull has been joyously returned to his meadow.</p>
+                </div>
+
+                <div class="glass-panel project">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Fn9MAIIue64" title="A Cycle of Downs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3>A Cycle of Downs</h3>
+                    <p><strong>Choreographer/Dancer:</strong> Christopher Coffman</p>
+                    <p><strong>Music:</strong> Iron – Woodkid</p>
+                    <p><strong>Videographer:</strong> Yaron Kidron</p>
+                    <p><strong>Location/Performance:</strong> Madison Experimental Dance Incubator, Cycle 1. May 7th, 2026</p>
+                    <p><strong>Style:</strong> Contemporary</p>
+                    <p class="desc"><strong>Description:</strong> A Cycle of Downs explores movements from the sport of football through the lens of contemporary dance. Through each down, the movements repeat and evolve as the game plays out on stage.</p>
+                </div>
+            </section>
+
+            <!-- STRENGTH & CONDITIONING SECTION -->
+            <section id="strength" class="content-section glass-panel section-panel hidden">
+                <img src="assets/images/shoulderstand.jpg" alt="Christopher Coffman Shoulderstand" class="content-image">
+                <p class="photo-credit">Photo by Yaron Kidron</p>
+
+                <p>Strength and Conditioning is the backbone of any dancer or athlete; it is not an afterthought. For both dancers and athletes, it heavily influences their performance capabilities, injury risk, and the length of their careers. My mission as a strength coach is to support athletic development so that my clients can engage confidently with their sports at maximum performance and maximize their longevity.</p>
+
+                <h2>My Strategy and Qualifications</h2>
+                <p>My approach to strength training is rooted in modern research in strength training and my experience working with athletes and dancers. I avoid training gimmicks and unnecessary distractions. Technical skills are built by practicing your sport, the capacity to execute them is developed in strength and conditioning programs. The best programs are focused and simple, hence why I still use paper program cards for exercise programming. In the gym, focus should be the weight on the bar. I’ve found that smartphone apps are currently unable to capture what a pen and paper can.</p>
+
+                <h2>For Dancers</h2>
+                <p>Our dance training generally does a very good job of training balance, ankle strength, and mobility, but often does not give us enough focus on basic strength and anaerobic conditioning to support us during performances. Working with me, you can expect to build a base layer of full body strength, which will help with your trick execution, entering and exiting the floor, and inversions in floor work. Once we build a base layer of strength, we’ll switch the focus to power to bring your leaps and jumps to new heights.</p>
+
+                <h2>For Athletes</h2>
+                <p>I build strength and conditioning programs to the physical demands of your sport and appropriate to the time of year (offseason, preseason, in-season). I’ll meet you at your current level of physical development, whether that be starting with building a solid strength foundation or developing sport specific capacities like explosive power off the line or vertical jump height.</p>
+
+                <p>With a Master’s degree in Human Physiology and an NSCA Certified Strength and Conditioning Specialist (CSCS) Credential, I am qualified to work with any athlete. I’ve worked extensively with dancers, football players, and powerlifters – populations that demand explosive movements, endurance, and high levels of coordination.</p>
+
+                <h2>Private Consultations</h2>
+                <p>Please reach out if you are interested in training with me. However, I maintain a strict capacity and am selective, working with only a small handful of private clients at any given time to ensure focused, high-level programming.</p>
+            </section>
+
+            <!-- ABOUT ME SECTION -->
+            <section id="about" class="content-section glass-panel section-panel hidden">
+                <img src="assets/images/headshot.jpg" alt="Christopher Coffman Headshot" class="content-image">
+                <p class="photo-credit">Photo by Shiloh from Painted Turtle Productions</p>
+
+                <p><strong>Christopher Coffman</strong> is a choreographer, athlete, technical consultant, and strength coach. He holds a Master’s degree in Human Physiology and is an NSCA Certified Strength and Conditioning Specialist (CSCS®). Chris is also a current offensive lineman for the Middleton Panthers semi-professional football team, and is a former professional arena football player. He also occasionally competes in powerlifting meets as a semi-retired competitive powerlifter. Off the field and outside the studio, Chris operates Superluminary LLC and works as a technical/software consultant, providing guidance on systems and software architecture. No matter the domain, Chris’s overall work is defined by power, precision, and raw strength.</p>
+            </section>
+        </main>
+
+        <!-- GLOBAL CONTACT FOOTER -->
+        <footer id="contact-footer" class="glass-panel">
+            <p>For choreography and strength coaching inquiries, contact Chris on Instagram <strong><a href="https://instagram.com/superb_chris" target="_blank">@superb_chris</a></strong>.</p>
+            <p>The source code for this website is also available on GitHub at <strong><a href="https://github.com/rndchris" target="_blank">https://github.com/rndchris</a></strong></p>
+            <p class="photo-credit" style="margin-top: 1rem; margin-bottom: 0;">Background photo by Yaron Kidron</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId, btnElement) {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Remove active styling from all buttons
+            const buttons = document.querySelectorAll('nav button');
+            buttons.forEach(btn => {
+                btn.classList.remove('active-tab');
+            });
+
+            // Show the target section and highlight the active button
+            document.getElementById(sectionId).classList.remove('hidden');
+            btnElement.classList.add('active-tab');
+        }
+    </script>
+</body>
+</html>
