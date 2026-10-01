@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 1. Primary Meta Tags -->
+    <!-- Primary Meta Tags -->
     <title>Christopher Coffman | Choreographer, Strength Coach & Technical Consultant</title>
     <meta name="title" content="Christopher Coffman | Choreographer, Strength Coach & Technical Consultant">
     <meta name="description" content="Portfolio of Christopher Coffman: Contemporary choreographer, NSCS Certified Strength and Conditioning Specialist (CSCS), and technical consultant based in the Madison, WI area.">
     <meta name="keywords" content="Christopher Coffman, choreographer, contemporary dance, CSCS, strength coach, Middleton Panthers, technical consultant, Madison Wisconsin, Verona WI, Superluminary LLC">
     <meta name="author" content="Christopher Coffman">
 
-    <!-- 2. Open Graph / Facebook / LinkedIn -->
+    <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/rndchris">
     <meta property="og:title" content="Christopher Coffman | Portfolio">
     <meta property="og:description" content="Contemporary choreographer, CSCS strength coach, and technical consultant bridging the gap between athletics, art, and systems architecture.">
-    <meta property="og:image" content="assets/images/headshot.jpg">
+    <meta property="og:image" content="assets/images/headshot.png">
 
-    <!-- 3. Twitter -->
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://github.com/rndchris">
     <meta property="twitter:title" content="Christopher Coffman | Portfolio">
     <meta property="twitter:description" content="Contemporary choreographer, CSCS strength coach, and technical consultant bridging the gap between athletics, art, and systems architecture.">
-    <meta property="twitter:image" content="assets/images/headshot.jpg">
+    <meta property="twitter:image" content="assets/images/headshot.png">
 
-    <!-- 4. Structured Data (JSON-LD) for Google Search -->
+    <!-- Structured Data (JSON-LD) for Google Search -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -56,24 +56,28 @@
       ]
     }
     </script>
+
     <style>
         /* Base layout with static background photo */
         body {
+            box-sizing: border-box;
+            position: relative; 
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            line-height: 1.75;
             color: #f8f9fa;
             margin: 0;
             padding: 2rem;
+            padding-bottom: 3rem; 
             min-height: 100vh;
-            background: url('assets/images/background.jpg') no-repeat center center fixed;
+            background: url('assets/images/background.jpg') no-repeat center top fixed;
             background-size: cover;
         }
 
         /* Header styling */
         .site-header {
             text-align: center;
-            margin-bottom: 2rem;
-            padding-top: 1rem;
+            margin-bottom: 0;
+            padding-top: 0; 
         }
 
         .site-header h1 {
@@ -85,7 +89,7 @@
             color: #ffffff;
         }
 
-        /* Reusable glass styling with transition for hover effects */
+        /* Reusable glass styling */
         .glass-panel {
             background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(12px);
@@ -96,10 +100,9 @@
             transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Subtle brighten effect when hovering over a glass panel */
         .glass-panel:hover {
-            background: rgba(30, 41, 59, 0.85); /* Slightly lighter background */
-            border-color: rgba(255, 255, 255, 0.35); /* Brighter border */
+            background: rgba(30, 41, 59, 0.85);
+            border-color: rgba(255, 255, 255, 0.35);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.05);
         }
 
@@ -114,33 +117,33 @@
             display: flex;
             gap: 1rem;
             margin-bottom: 2rem;
-            padding: 1rem;
+            padding: 0.5rem 0;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         nav button {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
-            color: #f8f9fa;
+            color: #ffffff;
             font-size: 1.05rem;
             font-weight: 600;
             cursor: pointer;
             padding: 0.6rem 1.2rem;
             transition: all 0.3s ease;
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         nav button:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.25);
             transform: translateY(-2px);
         }
 
         nav button.active-tab {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.35);
+            border-color: rgba(255, 255, 255, 0.6);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
@@ -153,24 +156,20 @@
             padding: 2.5rem;
         }
 
-        /* Keyframe animation for switching sections */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Typography & Reading Width Adjustments */
+        .section-panel p, .section-panel h2 {
+            padding: 0 1.5rem;
         }
 
-        /* Class applied via JavaScript when a section is revealed */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .fade-in {
             animation: fadeIn 0.4s ease-out forwards;
         }
 
-        /* Typography */
         h2 {
             margin-top: 2rem;
             font-weight: 600;
@@ -197,7 +196,7 @@
         }
 
         .project:hover {
-            transform: translateY(-4px); /* Stacks with the glass-panel hover effects */
+            transform: translateY(-4px);
         }
         
         .project p {
@@ -217,7 +216,7 @@
         /* Video Embeds */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             margin-bottom: 1.5rem;
@@ -238,9 +237,11 @@
         /* Images and Credits */
         .content-image {
             width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
             border-radius: 12px;
             display: block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.4)); 
         }
 
         .photo-credit {
@@ -252,52 +253,109 @@
             margin-bottom: 2rem;
         }
 
-        /* Footer */
+        /* Enhanced Contact Footer */
         #contact-footer {
             margin-top: 3rem;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
             text-align: center;
-            font-size: 0.95rem;
+        }
+
+        .footer-block {
+            flex: 1;
+        }
+
+        .footer-block h4 {
+            margin: 0 0 0.5rem 0;
+            color: #ffffff;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-block p {
+            font-size: 0.9rem;
             color: #cbd5e1;
+            margin: 0 0 1.25rem 0;
         }
 
-        a {
-            color: #60a5fa;
+        .footer-divider {
+            width: 1px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Call to Action Buttons for Footer */
+        .action-btn {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #f8f9fa;
             text-decoration: none;
-            transition: color 0.2s;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
 
-        a:hover {
-            color: #93c5fd;
-            text-decoration: underline;
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #ffffff;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        /* Background Photo Credit */
+        .bg-credit {
+            position: absolute;
+            bottom: 1rem;
+            right: 2rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+            z-index: 0;
         }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            body {
-                padding: 1rem;
+            body { 
+                padding: 1rem; 
+                padding-bottom: 3rem;
             }
+            .site-header h1 { font-size: 2.2rem; }
+            nav { flex-direction: column; gap: 0.5rem; }
+            nav button { width: 100%; padding: 0.75rem; }
+            .section-panel, .project { padding: 1.5rem; }
+            .section-panel p, .section-panel h2 { padding: 0; }
+            .content-image { max-width: 100%; }
+            #contact-footer { padding: 2rem 1.5rem; }
             
-            .site-header h1 {
-                font-size: 2.2rem;
-            }
-
-            nav {
+            /* Footer Stacking */
+            .footer-container {
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 2rem;
+            }
+            .footer-divider {
+                width: 80%;
+                height: 1px;
             }
 
-            nav button {
-                width: 100%;
-                padding: 0.75rem;
-            }
-
-            .section-panel, .project {
-                padding: 1.5rem;
-            }
-
-            #contact-footer {
-                padding: 1.5rem;
+            /* Center the background credit on mobile */
+            .bg-credit {
+                right: 0;
+                left: 0;
+                text-align: center;
+                bottom: 0.5rem;
             }
         }
     </style>
@@ -310,15 +368,16 @@
             <h1>Christopher Coffman</h1>
         </header>
 
-        <nav class="glass-panel">
-            <button onclick="showSection('dance', this)" class="active-tab">Dance & Choreography</button>
+        <!-- Navigation Buttons: Initially load with no active tab -->
+        <nav>
+            <button onclick="showSection('dance', this)">Dance & Choreography</button>
             <button onclick="showSection('strength', this)">Strength & Conditioning</button>
             <button onclick="showSection('about', this)">About Me</button>
         </nav>
 
         <main>
             <!-- DANCE & CHOREOGRAPHY SECTION -->
-            <section id="dance" class="content-section fade-in">
+            <section id="dance" class="content-section hidden">
                 
                 <div class="glass-panel project">
                     <div class="video-container">
@@ -339,8 +398,7 @@
                         <iframe src="https://www.youtube.com/embed/cbdVQ_TIBf4" title="Ferdinand Finale" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <h3>Ferdinand Finale</h3>
-                    <p><strong>Choreographer(s):</strong> Christopher Coffman, Mike Tredupp</p>
-                    <p><strong>Dancer:</strong> Christopher Coffman</p>
+                    <p><strong>Choreographers/Dancers:</strong> Christopher Coffman and Mike Tredupp</p>
                     <p><strong>Music:</strong> I’ll Make a Man Out of You – Disney Peaceful Strings</p>
                     <p><strong>Videographer:</strong> Jim Vaness</p>
                     <p><strong>Location/Performance:</strong> Ferdinand by Beatrix Productions September 26, 2026</p>
@@ -369,8 +427,7 @@
 
                 <p>Strength and Conditioning is the backbone of any dancer or athlete; it is not an afterthought. For both dancers and athletes, it heavily influences their performance capabilities, injury risk, and the length of their careers. My mission as a strength coach is to support athletic development so that my clients can engage confidently with their sports at maximum performance and maximize their longevity.</p>
 
-                <h2>My Strategy and Qualifications</h2>
-                <p>My approach to strength training is rooted in modern research in strength training and my experience working with athletes and dancers. I avoid training gimmicks and unnecessary distractions. Technical skills are built by practicing your sport, the capacity to execute them is developed in strength and conditioning programs. The best programs are focused and simple, hence why I still use paper program cards for exercise programming. In the gym, focus should be the weight on the bar. I’ve found that smartphone apps are currently unable to capture what a pen and paper can.</p>
+                <p>My approach to strength training is rooted in modern research and my experience working with athletes and dancers. I avoid training gimmicks and unnecessary distractions. Technical skills are built by practicing your sport, the capacity to execute them is developed in strength and conditioning programs. The best programs are focused and simple, hence why I still use paper program cards for exercise programming. In the gym, focus should be the weight on the bar. I’ve found that smartphone apps are currently unable to capture what a pen and paper can.</p>
 
                 <h2>For Dancers</h2>
                 <p>Our dance training generally does a very good job of training balance, ankle strength, and mobility, but often does not give us enough focus on basic strength and anaerobic conditioning to support us during performances. Working with me, you can expect to build a base layer of full body strength, which will help with your trick execution, entering and exiting the floor, and inversions in floor work. Once we build a base layer of strength, we’ll switch the focus to power to bring your leaps and jumps to new heights.</p>
@@ -378,6 +435,7 @@
                 <h2>For Athletes</h2>
                 <p>I build strength and conditioning programs to the physical demands of your sport and appropriate to the time of year (offseason, preseason, in-season). I’ll meet you at your current level of physical development, whether that be starting with building a solid strength foundation or developing sport specific capacities like explosive power off the line or vertical jump height.</p>
 
+                <h2>Qualifications</h2>
                 <p>With a Master’s degree in Human Physiology and an NSCA Certified Strength and Conditioning Specialist (CSCS) Credential, I am qualified to work with any athlete. I’ve worked extensively with dancers, football players, and powerlifters – populations that demand explosive movements, endurance, and high levels of coordination.</p>
 
                 <h2>Private Consultations</h2>
@@ -386,45 +444,75 @@
 
             <!-- ABOUT ME SECTION -->
             <section id="about" class="content-section glass-panel section-panel hidden">
-                <img src="assets/images/headshot.jpg" alt="Christopher Coffman Headshot" class="content-image">
+                <img src="assets/images/headshot.png" alt="Christopher Coffman Headshot" class="content-image">
                 <p class="photo-credit">Photo by Shiloh from Painted Turtle Productions</p>
 
                 <p><strong>Christopher Coffman</strong> is a choreographer, athlete, technical consultant, and strength coach. He holds a Master’s degree in Human Physiology and is an NSCA Certified Strength and Conditioning Specialist (CSCS®). Chris is also a current offensive lineman for the Middleton Panthers semi-professional football team, and is a former professional arena football player. He also occasionally competes in powerlifting meets as a semi-retired competitive powerlifter. Off the field and outside the studio, Chris operates Superluminary LLC and works as a technical/software consultant, providing guidance on systems and software architecture. No matter the domain, Chris’s overall work is defined by power, precision, and raw strength.</p>
             </section>
         </main>
 
-        <!-- GLOBAL CONTACT FOOTER -->
-        <footer id="contact-footer" class="glass-panel">
-            <p>For choreography and strength coaching inquiries, contact Chris on Instagram <strong><a href="https://instagram.com/superb_chris" target="_blank">@superb_chris</a></strong>.</p>
-            <p>The source code for this website is also available on GitHub at <strong><a href="https://github.com/rndchris" target="_blank">https://github.com/rndchris</a></strong></p>
-            <p class="photo-credit" style="margin-top: 1rem; margin-bottom: 0;">Background photo by Yaron Kidron</p>
+        <!-- ENHANCED CONTACT FOOTER -->
+        <footer id="contact-footer" class="glass-panel hidden">
+            <div class="footer-container">
+                <div class="footer-block" id="footer-inquiries-block">
+                    <h4>Inquiries & Coaching</h4>
+                    <p>Reach out directly on Instagram to discuss training or choreography.</p>
+                    <a href="https://instagram.com/superb_chris" target="_blank" class="action-btn">@superb_chris</a>
+                </div>
+                
+                <div class="footer-divider" id="footer-divider"></div>
+                
+                <div class="footer-block" id="footer-source-block">
+                    <h4>View Source</h4>
+                    <p>The code for this portfolio is publicly available. Review the deployment architecture on GitHub.</p>
+                    <a href="https://github.com/rndchris" target="_blank" class="action-btn">github.com/rndchris</a>
+                </div>
+            </div>
         </footer>
     </div>
+    
+    <!-- Floating Background Image Credit -->
+    <div class="bg-credit">Background photo by Yaron Kidron</div>
 
     <script>
         function showSection(sectionId, btnElement) {
-            // Hide all content sections and remove the animation class
+            const isAlreadyActive = btnElement.classList.contains('active-tab');
+            const footer = document.getElementById('contact-footer');
+            const sourceBlock = document.getElementById('footer-source-block');
+            const footerDivider = document.getElementById('footer-divider');
+
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => {
                 section.classList.add('hidden');
                 section.classList.remove('fade-in');
             });
 
-            // Remove active styling from all buttons
             const buttons = document.querySelectorAll('nav button');
             buttons.forEach(btn => {
                 btn.classList.remove('active-tab');
             });
 
-            // Show the target section
+            if (isAlreadyActive) {
+                footer.classList.add('hidden');
+                return;
+            }
+
             const targetSection = document.getElementById(sectionId);
             targetSection.classList.remove('hidden');
+            footer.classList.remove('hidden');
+
+            // Logic to only display the Source Code block on the About Me tab
+            if (sectionId === 'about') {
+                sourceBlock.classList.remove('hidden');
+                footerDivider.classList.remove('hidden');
+            } else {
+                sourceBlock.classList.add('hidden');
+                footerDivider.classList.add('hidden');
+            }
             
-            // Trigger a reflow to restart the animation
             void targetSection.offsetWidth;
             targetSection.classList.add('fade-in');
 
-            // Highlight the active button
             btnElement.classList.add('active-tab');
         }
     </script>
