@@ -14,14 +14,14 @@
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.com/rndchris">
+    <meta property="og:url" content="https://github.com/rndchris/coffmanmovement.com">
     <meta property="og:title" content="Christopher Coffman | Portfolio">
     <meta property="og:description" content="Contemporary choreographer, CSCS strength coach, and technical consultant bridging the gap between athletics, art, and systems architecture.">
     <meta property="og:image" content="assets/images/headshot.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://github.com/rndchris">
+    <meta property="twitter:url" content="https://github.com/rndchris/coffmanmovement.com">
     <meta property="twitter:title" content="Christopher Coffman | Portfolio">
     <meta property="twitter:description" content="Contemporary choreographer, CSCS strength coach, and technical consultant bridging the gap between athletics, art, and systems architecture.">
     <meta property="twitter:image" content="assets/images/headshot.png">
@@ -113,13 +113,13 @@
             margin: 0 auto;
         }
 
-        /* Navigation styling */
+        /* Navigation styling - Kept to a single line on desktop */
         nav {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             margin-bottom: 2rem;
             padding: 0.5rem 0;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             justify-content: center;
         }
 
@@ -128,13 +128,14 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             color: #ffffff;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
-            padding: 0.6rem 1.2rem;
+            padding: 0.6rem 0.9rem;
             transition: all 0.3s ease;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
+            white-space: nowrap;
         }
 
         nav button:hover {
@@ -315,6 +316,17 @@
             transform: translateY(-2px);
         }
 
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+
         /* Background Photo Credit */
         .bg-credit {
             position: absolute;
@@ -334,8 +346,8 @@
                 padding-bottom: 3rem;
             }
             .site-header h1 { font-size: 2.2rem; }
-            nav { flex-direction: column; gap: 0.5rem; }
-            nav button { width: 100%; padding: 0.75rem; }
+            nav { flex-direction: column; gap: 0.5rem; flex-wrap: wrap; }
+            nav button { width: 100%; padding: 0.75rem; font-size: 1.05rem; }
             .section-panel, .project { padding: 1.5rem; }
             .section-panel p, .section-panel h2 { padding: 0; }
             .content-image { max-width: 100%; }
@@ -369,10 +381,11 @@
             <h1>Christopher Coffman</h1>
         </header>
 
-        <!-- Navigation Buttons: Initially load with no active tab -->
+        <!-- Navigation Buttons -->
         <nav>
             <button onclick="showSection('dance', this)">Dance & Choreography</button>
             <button onclick="showSection('strength', this)">Strength & Conditioning</button>
+            <button onclick="showSection('upcoming', this)">Upcoming Events</button>
             <button onclick="showSection('about', this)">About Me</button>
         </nav>
 
@@ -441,6 +454,61 @@
 
                 <h2>Private Consultations</h2>
                 <p>Please reach out if you are interested in training with me. However, I maintain a strict capacity and am selective, working with only a small handful of private clients at any given time to ensure focused, high-level programming.</p>
+            </section>
+
+            <!-- UPCOMING EVENTS SECTION -->
+            <section id="upcoming" class="content-section hidden">
+                <h2 style="color: #ffffff; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem; margin-top: 0; margin-bottom: 1.5rem;">Competitions & Performances</h2>
+                
+                <div class="glass-panel project">
+                    <h3>Lift Off</h3>
+                    <p><strong>Event Type:</strong> Unsanctioned Powerlifting Meet</p>
+                    <p><strong>Date & Time:</strong> October 17 at 8:00 AM</p>
+                    <p><strong>Location:</strong> Unbroken Strength in Verona</p>
+                    <p class="desc"><strong>Description:</strong> I'll be competing in this local powerlifting meet.</p>
+                </div>
+
+                <div class="glass-panel project">
+                    <h3>Madison Experimental Dance Incubator - Cycle 3</h3>
+                    <p><strong>Event Type:</strong> Contemporary Dance Showcase</p>
+                    <p><strong>Date & Time:</strong> Sunday, November 7 @ 7:00 PM</p>
+                    <p><strong>Location:</strong> Ballet U in Verona</p>
+                    <p><strong>Tickets:</strong> <a href="https://medi.catmachinesdance.com/" target="_blank">medi.catmachinesdance.com</a></p>
+                    <p class="desc"><strong>Description:</strong> Ashley Harty and I will be choreographing and performing a contemporary piece for this MEDI cycle.</p>
+                </div>
+
+                <div class="glass-panel project">
+                    <h3>Charity Football Game: Fox River Raiders vs. The Middleton Panthers</h3>
+                    <p><strong>Event Type:</strong> Semi-Professional Football</p>
+                    <p><strong>Date & Location:</strong> November TBD</p>
+                    <p><strong>Position:</strong> Offensive Lineman (#64)</p>
+                    <p class="desc"><strong>Description:</strong> I will be taking the field for a charity match.</p>
+                </div>
+
+                <div class="glass-panel project">
+                    <h3>Powerlifting America - Wisconsin State Championships</h3>
+                    <p><strong>Event Type:</strong> Sanctioned Powerlifting Championship</p>
+                    <p><strong>Date:</strong> Saturday, December 5</p>
+                    <p><strong>Location:</strong> Bakke Athletics in Fitchburg</p>
+                    <p class="desc"><strong>Description:</strong> Come watch me compete in the state powerlifting championships.</p>
+                </div>
+
+                <h2 style="color: #ffffff; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem; margin-top: 2.5rem; margin-bottom: 1.5rem;">In Progress / Stay Tuned</h2>
+
+                <div class="glass-panel project">
+                    <h3>Strength and Conditioning for Dancers</h3>
+                    <p><strong>Event Type:</strong> Workshop</p>
+                    <p><strong>Details:</strong> Date, Location, and Venue TBD</p>
+                    <p class="desc"><strong>Description:</strong> A workshop for beginning strength conditioning focused on dancers. We'll be trading the barre for barbells.</p>
+                </div>
+
+                <div class="glass-panel project">
+                    <h3>Beginner Contemporary for Retirees</h3>
+                    <p><strong>Event Type:</strong> Community Dance Class</p>
+                    <p><strong>Details:</strong>Will be in Yuma, AZ. Date, and Venue TBD</p>
+                    <p><strong>Audience:</strong> Adults 55+ (All ages welcome; music selection will be 13+)</p>
+                    <p class="desc"><strong>Description:</strong> A beginner contemporary choreography class intended for adults 55+.</p>
+                </div>
             </section>
 
             <!-- ABOUT ME SECTION -->
