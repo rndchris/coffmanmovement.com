@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#glassGrad)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <text x="32" y="43" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" fill="#ffffff" text-anchor="middle" letter-spacing="-2">CC</text>
+</svg>
