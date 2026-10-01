@@ -159,8 +159,18 @@
         }
 
         /* Typography & Reading Width Adjustments */
-        .section-panel p, .section-panel h2 {
+        .section-panel p, .section-panel h2, .section-panel ul {
             padding: 0 1.5rem;
+        }
+
+        .section-panel ul {
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+        }
+
+        .section-panel li {
+            margin-bottom: 0.5rem;
         }
 
         @keyframes fadeIn {
@@ -213,6 +223,28 @@
             border-top: 1px dashed rgba(255, 255, 255, 0.2);
             font-size: 1rem;
             line-height: 1.7;
+        }
+
+        /* Project Cards with Side-by-Side Media Layout */
+        .project-with-image {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .project-content {
+            flex: 1;
+        }
+
+        .project-image-container {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            border-radius: 12px;
+            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.4));
         }
 
         /* Video Embeds */
@@ -349,8 +381,21 @@
             nav { flex-direction: column; gap: 0.5rem; flex-wrap: wrap; }
             nav button { width: 100%; padding: 0.75rem; font-size: 1.05rem; }
             .section-panel, .project { padding: 1.5rem; }
-            .section-panel p, .section-panel h2 { padding: 0; }
+            .section-panel p, .section-panel h2, .section-panel ul { padding: 0; }
             .content-image { max-width: 100%; }
+            
+            /* Stack side-by-side upcoming event cards on mobile */
+            .project-with-image {
+                flex-direction: column-reverse;
+                gap: 1.5rem;
+            }
+            .project-image-container {
+                flex: none;
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
             #contact-footer { padding: 2rem 1.5rem; }
             
             /* Footer Stacking */
@@ -439,7 +484,7 @@
                 <img src="assets/images/shoulderstand.jpg" alt="Christopher Coffman Shoulderstand" class="content-image">
                 <p class="photo-credit">Photo by Yaron Kidron</p>
 
-                <p>Strength and Conditioning is the backbone of any dancer or athlete; it is not an afterthought. For both dancers and athletes, it heavily influences their performance capabilities, injury risk, and the length of their careers. My mission as a strength coach is to support athletic development so that my clients can engage confidently with their sports at maximum performance and maximize their longevity.</p>
+                <p>Strength and Conditioning is the backbone of any dancer or athlete; it is not an afterthought. For both dancers and athletes, it heavily influences their performance capabilities, injury risk, and the length of their careers. My mission as a strength coach is to support athletic development so that my clients can engage confidently with their sports at maximum performance and maximize their longevity. I've worked extensively with dancers, football players, and powerlifters—populations that demand explosive movements, endurance, and high levels of coordination.</p>
 
                 <p>My approach to strength training is rooted in modern research and my experience working with athletes and dancers. I avoid training gimmicks and unnecessary distractions. Technical skills are built by practicing your sport, the capacity to execute them is developed in strength and conditioning programs. The best programs are focused and simple, hence why I still use paper program cards for exercise programming. In the gym, focus should be the weight on the bar. I’ve found that smartphone apps are currently unable to capture what a pen and paper can.</p>
 
@@ -450,7 +495,10 @@
                 <p>I build strength and conditioning programs to the physical demands of your sport and appropriate to the time of year (offseason, preseason, in-season). I’ll meet you at your current level of physical development, whether that be starting with building a solid strength foundation or developing sport specific capacities like explosive power off the line or vertical jump height.</p>
 
                 <h2>Qualifications</h2>
-                <p>With a Master’s degree in Human Physiology and an NSCA Certified Strength and Conditioning Specialist (CSCS) Credential, I am qualified to work with any athlete. I’ve worked extensively with dancers, football players, and powerlifters – populations that demand explosive movements, endurance, and high levels of coordination.</p>
+                <ul>
+                    <li>NSCA Certified Strength and Conditioning Specialist (CSCS®)</li>
+                    <li>Master's degree in Health and Human Physiology</li>
+                </ul>
 
                 <h2>Private Consultations</h2>
                 <p>Please reach out if you are interested in training with me. However, I maintain a strict capacity and am selective, working with only a small handful of private clients at any given time to ensure focused, high-level programming.</p>
@@ -460,12 +508,17 @@
             <section id="upcoming" class="content-section hidden">
                 <h2 style="color: #ffffff; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem; margin-top: 0; margin-bottom: 1.5rem;">Competitions & Performances</h2>
                 
-                <div class="glass-panel project">
-                    <h3>Lift Off</h3>
-                    <p><strong>Event Type:</strong> Unsanctioned Powerlifting Meet</p>
-                    <p><strong>Date & Time:</strong> October 17 at 8:00 AM</p>
-                    <p><strong>Location:</strong> Unbroken Strength in Verona</p>
-                    <p class="desc"><strong>Description:</strong> I'll be competing in this local powerlifting meet.</p>
+                <div class="glass-panel project project-with-image">
+                    <div class="project-content">
+                        <h3>Lift Off</h3>
+                        <p><strong>Event Type:</strong> Unsanctioned Powerlifting Meet</p>
+                        <p><strong>Date & Time:</strong> October 17 at 8:00 AM</p>
+                        <p><strong>Location:</strong> Unbroken Strength in Verona</p>
+                        <p class="desc"><strong>Description:</strong> I'll be competing in this local powerlifting meet.</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="assets/images/image_85cebc.png" alt="Barbell Squat Execution">
+                    </div>
                 </div>
 
                 <div class="glass-panel project">
@@ -477,20 +530,30 @@
                     <p class="desc"><strong>Description:</strong> Ashley Harty and I will be choreographing and performing a contemporary piece for this MEDI cycle.</p>
                 </div>
 
-                <div class="glass-panel project">
-                    <h3>Charity Football Game: Fox River Raiders vs. The Middleton Panthers</h3>
-                    <p><strong>Event Type:</strong> Semi-Professional Football</p>
-                    <p><strong>Date & Location:</strong> November TBD</p>
-                    <p><strong>Position:</strong> Offensive Lineman (#64)</p>
-                    <p class="desc"><strong>Description:</strong> I will be taking the field for a charity match.</p>
+                <div class="glass-panel project project-with-image">
+                    <div class="project-content">
+                        <h3>Charity Football Game: Fox River Raiders vs. The Middleton Panthers</h3>
+                        <p><strong>Event Type:</strong> Semi-Professional Football</p>
+                        <p><strong>Date & Location:</strong> November TBD</p>
+                        <p><strong>Position:</strong> Offensive Lineman (#64)</p>
+                        <p class="desc"><strong>Description:</strong> I will be taking the field for a charity match.</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="assets/images/football_chris.jpg" alt="Christopher Coffman in Football Uniform">
+                    </div>
                 </div>
 
-                <div class="glass-panel project">
-                    <h3>Powerlifting America - Wisconsin State Championships</h3>
-                    <p><strong>Event Type:</strong> Sanctioned Powerlifting Championship</p>
-                    <p><strong>Date:</strong> Saturday, December 5</p>
-                    <p><strong>Location:</strong> Bakke Athletics in Fitchburg</p>
-                    <p class="desc"><strong>Description:</strong> Come watch me compete in the state powerlifting championships.</p>
+                <div class="glass-panel project project-with-image">
+                    <div class="project-content">
+                        <h3>Powerlifting America - Wisconsin State Championships</h3>
+                        <p><strong>Event Type:</strong> Sanctioned Powerlifting Championship</p>
+                        <p><strong>Date:</strong> Saturday, December 5</p>
+                        <p><strong>Location:</strong> Bakke Athletics in Fitchburg</p>
+                        <p class="desc"><strong>Description:</strong> Come watch me compete in the state powerlifting championships.</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="assets/images/image_8620b7.png" alt="Overhead Press Execution">
+                    </div>
                 </div>
 
                 <h2 style="color: #ffffff; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem; margin-top: 2.5rem; margin-bottom: 1.5rem;">In Progress / Stay Tuned</h2>
