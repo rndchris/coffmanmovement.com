@@ -1,0 +1,57 @@
+{
+  "upcoming": [
+    {
+      "title": "Madison Experimental Dance Incubator - Cycle 3",
+      "eventType": "Contemporary Dance Showcase",
+      "dateTime": "Sunday, November 8 @ 7:00 PM",
+      "location": "Ballet U in Verona",
+      "ticketsUrl": "https://medi.catmachinesdance.com/",
+      "ticketsLabel": "medi.catmachinesdance.com",
+      "description": "Ashley Harty and I will be choreographing and performing a contemporary piece for this MEDI cycle.",
+      "archiveAfter": "2026-11-09"
+    },
+    {
+      "title": "Charity Football Game: Fox River Raiders vs. The Middleton Panthers",
+      "eventType": "Semi-Professional Football",
+      "dateLocation": "November TBD",
+      "position": "Offensive Lineman (#64)",
+      "description": "I will be taking the field for a charity match.",
+      "image": "assets/images/football_chris.jpg",
+      "imageAlt": "Christopher Coffman in Football Uniform",
+      "archiveAfter": "2026-12-01"
+    },
+    {
+      "title": "Powerlifting America - Wisconsin State Championships",
+      "eventType": "Sanctioned Powerlifting Championship",
+      "date": "Saturday, December 5",
+      "location": "Bakke Athletics in Fitchburg",
+      "description": "Come watch me compete in the state powerlifting championships.",
+      "image": "assets/images/image_8620b7.png",
+      "imageAlt": "Overhead Press Execution",
+      "archiveAfter": "2026-12-06"
+    },
+    {
+      "title": "Isthmus Dance Collective Member Showcase",
+      "eventType": "Dance Performance",
+      "dateLocation": "February 19 & 20, 2027 at MyArts Sunrise Theatre",
+      "description": "I will be performing in Alyssa Jendusa's Contemporary/Modern work, \"Contours in the Snow.\"",
+      "archiveAfter": "2027-02-21"
+    }
+  ],
+  "inProgress": [
+    {
+      "title": "Strength and Conditioning for Dancers",
+      "eventType": "Workshop",
+      "details": "Date, Location, and Venue TBD",
+      "description": "A workshop for beginning strength conditioning focused on dancers. We'll be trading the barre for barbells."
+    },
+    {
+      "title": "Beginner Contemporary for Retirees",
+      "eventType": "Community Dance Class",
+      "details": "Will be in Yuma, AZ. Date and Venue TBD",
+      "audience": "Adults 55+ (All ages welcome; music selection will be 13+)",
+      "description": "A beginner contemporary choreography class intended for adults 55+."
+    }
+  ]
+}
+
